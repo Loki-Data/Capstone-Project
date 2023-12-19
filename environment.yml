@@ -1,0 +1,13 @@
+name: capstone
+channels:
+  - defaults
+dependencies:
+  - jupyter
+  - seaborn
+  - pandas
+  - scikit-learn=0.24.1
+  - matplotlib
+  - python=3.8
+  - numpy
+  - jupyterlab
+prefix: /Users/lokikeeler/anaconda3/envs/capstone
