@@ -46,7 +46,7 @@ __Project Overview__
 
 The project is split into a number of notebooks:
 
-Capstone 1
+EDA 1
 
 Data Dictionary
 Loading Reddit Sarcasm Corpus Data (train-balanced-sarcasm_csv)
@@ -55,19 +55,28 @@ There are just over 1 million rows of data, half of which are labeled as sarcast
 94% of all data lies between the score value range of -20 and 20. This data provides a much more normal distribution so I continue on with this subset of the data.
 Another finding was that sarcastic comments had slightly more approving up votes overall.
 
-Capstone 2
+EDA 2
 
-Initial attempts of logistic regression models.
-All of these came out pretty bad. I will have to play around with different models to get desirable results.
+Further breakdown of data and initial attempts of logistic regression models with numeric data (not comments, yet).
+All of these came out pretty poor.
 
-Capstone 3
+Modeling 3
 
-(To be completed)
-Here I will dive into Text classifiers, sentence embeddings, N-grams, and possibly other regression models.
-Hopefully with this I can train a model to detect sarcasm very well.
+In this journal I have dove into NLP. I tokenized the comments and used a Count Vectorizer, then performed some logistic regression models as well as a Decision Tree Classifier paired with a pipeline and GridSearch. With this I was able to pull up the top 20 words that occur to signify sarcasm. Furthermore, the logistic model improved upon the one in the previous journal, but the Decision Tree model did not perform as well.
 
-Capstone 4
+Modeling 4
 
-(To be completed)
-Applying regression models and classifiers on top of an existing LLM (BERT or ChatGPT 3.0)
+Further testing commenced as I used a TF-IDF this time, and edited my tokenizer to allow words with capital letters. With this the Logistic Regression model increased in accuracy, precision, and recall (almost all percentages were at 70%). This was exciting, but the Decision Tree performed poorly again.
+
+Modeling 5
+
+(To be completed) Here we will work on our Decision Tree model
+
+Modeling 6
+
+(To be completed) Here we will perform a Random Forest
+
+Modeling 7
+
+(To be completed) Now we will attempt our Sarcasm Response Generator
 
