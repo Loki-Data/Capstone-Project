@@ -70,13 +70,21 @@ Further testing commenced as I used a TF-IDF this time, and edited my tokenizer 
 
 Modeling 5
 
-(To be completed) Here we will work on our Decision Tree model
+For this model we used the same tokenizer and TF IDF vectorizer on my comments, but used Random Forests modeling. At first, the model was overfitting and providing accuracies of about 64%. I then looked into the confusion matrix of this model and added hyperparameters. With this I was able to reduce the overfitting, but not completely get rid of it. Also, I wasn't able to increase the accuracy of this model. This was interesting because this lower than the score of my logisitic regression model in the previous notebook.
 
 Modeling 6
 
-(To be completed) Here we will perform a Random Forest
+For this model I used a BERT (Bidirectional Encoder Representations from Transformers) from HuggingFace. This is a powerful transformer than specializes in Natural Language Processing. I added no parameters to this, fed in the comments from my dataset and let it run. Amazingly, this beast produced 94% scores across the board (accuracy, recall, precision, and F1 scores) on the test set! Without any fine tuning, this model beat all my other fine tuned models by 25%. 
 
-Modeling 7
+Detector 7
 
-(To be completed) Now we will attempt our Sarcasm Response Generator
+Here I attempt to create a sarcasm detector with my best finely tuned model (not the BERT), which was a logistic regression model with a TF IDF vecorizer and a specialized tokenizer. I create the function and put it to practice. Outstanding news is that it works! It as able to detect sarcasm in most instances. Furthermore, for the instances it got incorrect, if I added just one word, such as "totally", it was able to detect the sarcasm. This highlighted some of the feature importance from this model.
+ 
 
+__Conclusion & Next Steps__
+
+I was able to create many models different Logisitic Regression, Decision Tree, and Random Forest models with different tokenizers and different vectorizers. To my surprise, a logisitic regression model (69% accuracy) with a TF IDF vectorizer performerd better than my finely tuned Random Forest models. This primarily had to do with the feature importance my vectorizer created. Then, after tuning all my models I applied a BERT from HuggingFace which performed with a 94% accuracy, absolutely crushing my other models. This showed despite my best efforts, I came no where near close to the transformers currently available to the public. 
+
+That being said, I was able to create a function for a sarcasm detector with my best performing logisitic regression model. This function was overall successful! And when it wasn't successful, I was able to tweak the sentence with just a word or two for the function to pick up on the sarcasm.
+
+Next steps include diving into the context of the sentence, thus the parent comment to the comment, or possibily the charactistics of the user stating the comment, to see if we can better detect sarcasm this way. Futhermore, I would like to create a model that can also generate a sarcastic response after detecting sarcasm.
