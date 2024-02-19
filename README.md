@@ -46,6 +46,10 @@ __Project Overview__
 
 The project is split into a number of notebooks:
 
+
+
+EDA (folder)
+
 EDA 1
 
 Data Dictionary
@@ -59,6 +63,10 @@ EDA 2
 
 Further breakdown of data and initial attempts of logistic regression models with numeric data (not comments, yet).
 All of these came out pretty poor.
+
+
+
+Modeling (folder)
 
 Modeling 3
 
@@ -76,9 +84,17 @@ Modeling 6
 
 For this model I used a BERT (Bidirectional Encoder Representations from Transformers) from HuggingFace. This is a powerful transformer than specializes in Natural Language Processing. I added no parameters to this, fed in the comments from my dataset and let it run. Amazingly, this beast produced 94% scores across the board (accuracy, recall, precision, and F1 scores) on the test set! Without any fine tuning, this model beat all my other fine tuned models by 25%. 
 
+
+
+Sarcasm Detector (folder)
+
 Detector 7
 
 Here I attempt to create a sarcasm detector with my best finely tuned model (not the BERT), which was a logistic regression model with a TF IDF vecorizer and a specialized tokenizer. I create the function and put it to practice. Outstanding news is that it works! It as able to detect sarcasm in most instances. Furthermore, for the instances it got incorrect, if I added just one word, such as "totally", it was able to detect the sarcasm. This highlighted some of the feature importance from this model.
+
+StreamLit
+
+Here I created a journal to operate the sarcasm detector via StreamLit in one's terminal. To do this, one must also use the pickled files I placed in this Sarcasm Detector folder (finalized_model, finalized_vector, finalized_tokenizer)
  
 
 __Conclusion & Next Steps__
